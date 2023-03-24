@@ -57,6 +57,19 @@ const { Chance } = require("chance")
 const crypto = require("crypto");
 ```
 
+## Refactor explanation
+
+It could be hard to explain how I did the refactor because what I did was to start
+removing duplicate logic, but in the end all comes down to determine if the partitionKey is
+present in the event object or not, and what is it's type. Please read the comments, they
+explain some of the most important logic facts to remove certain conditionals.
+
+## Why is easier to read?
+* Is a simple logic without nested blocks
+* It does not uses var or let keywords, only const, it makes less bug prune
+* It reduces duplicate code
+* Reduces validations because some logic conclusions
+
 
 
 
